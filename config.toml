@@ -2,7 +2,7 @@ max_batch_size = 700
 model_path = "models/blueprint.pt"
 n_rollouts = 100
 
-[plausible_orders_cfg]
+[plausible_orders]
 n_plausible_orders = 8
 max_actions_units_ratio = 3
 req_size = 2100

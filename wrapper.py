@@ -68,7 +68,7 @@ class milaWrapper:
         self.last_comm_intent={'RUSSIA':None,'TURKEY':None,'ITALY':None,'ENGLAND':None,'FRANCE':None,'GERMANY':None,'AUSTRIA':None,'final':None}
         self.prev_received_msg_time_sent = {'RUSSIA':None,'TURKEY':None,'ITALY':None,'ENGLAND':None,'FRANCE':None,'GERMANY':None,'AUSTRIA':None}
         
-        agent_config = heyhi.load_config('/diplomacy_cicero/conf/common/agents/cicero.prototxt')
+        agent_config = heyhi.load_config('conf.prototxt')
         logger.info(f"successfully load cicero config")
 
         self.agent = PyBQRE1PAgent(agent_config.bqre1p)
@@ -105,7 +105,7 @@ class milaWrapper:
         self.player = Player(self.agent, power_name)
         self.power_name = power_name
         
-        logging.basicConfig(filename=f'/diplomacy_cicero/fairdiplomacy_external/{game_id}_{power_name}.log', format="%(asctime)s [%(levelname)s]: %(message)s", level=logging.INFO)
+        logging.basicConfig(filename=f'{game_id}_{power_name}.log', format="%(asctime)s [%(levelname)s]: %(message)s", level=logging.INFO)
 
         while not self.game.is_game_done:
             self.phase_start_time = time.time()
